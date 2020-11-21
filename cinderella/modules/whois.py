@@ -74,13 +74,13 @@ def info(bot: Bot, update: Update, args: List[str]):
    
 
     if user.id == OWNER_ID:
-        text += "\n🚶🏻‍♂️Uff,This person is my Owner🤴\nI would never do anything against him!."
+        text += "\n 🚶🏻‍♂️Hey,This Guy is my Owner🤴\nI would never do anything against him, u also don't do anything!."
         
     elif user.id in DEV_USERS:
-        text += "\n🚴‍♂️Pling,This person is my dev🤷‍♂️\nI would never do anything against him!."
+        text += "\n🚴‍♂️Pling,This person is my dev🤷‍♂️\nI would never do anything against him, u also don't do anything!."
         
-    elif user.id == 1118936839:
-        text += "\n🚴‍♂️Pling,This person is my Creator/developer🤷‍♂️\nI would never do anything against him!."     
+    elif user.id == 1419925634:
+        text += "\n🚴‍♂️Pling,This person is my Creator/developer🤷‍♂️\nI would never do anything against him, u also don't do anything!."     
         
     elif user.id in SUDO_USERS:
         text += "\n🚴‍♂️Pling,This person is one of my sudo users! " \
