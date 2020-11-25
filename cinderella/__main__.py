@@ -44,6 +44,8 @@ the things I can help you with.
  🌀 - /source: Information about my source.
  🌀 - /settings:
 
+🔈If U Want Any Support Or Have Any Query Related to Bot u can visit @SeraSupport
+
  🔹 - in PM: will send you your settings for all supported modules.
  🔸 - in a group: will redirect you to pm, with all that chat's settings.
 {}
