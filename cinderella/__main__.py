@@ -41,7 +41,6 @@ the things I can help you with.
  🌀 - /start: start the bot
  🌀 - /help: PM's you this message.
  🌀 - /help <module name>: PM's you info about that module.
- 🌀 - /source: Information about my source.
  🌀 - /settings:
 
 🔈If U Want Any Support Or Have Any Query Related to Bot u can visit @SeraSupport
