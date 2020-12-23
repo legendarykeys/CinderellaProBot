@@ -447,7 +447,7 @@ def source(bot: Bot, update: Update):
         try:
             bot.send_message(user.id, SOURCE_STRING, parse_mode=ParseMode.MARKDOWN)
 
-            update.effective_message.reply_text("You'll find in PM more info about my sourcecode.")
+            update.effective_message.reply_text("Bsdk Source Chahiye, Ib kar Batati hu Tereko .")
         except Unauthorized:
             update.effective_message.reply_text("Contact me in PM first to get source information.")
 
