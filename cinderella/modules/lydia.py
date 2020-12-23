@@ -91,14 +91,14 @@ __mod_name__ = "LYDIA/CHATBOT"
 
 __help__ = """
 Commands
- - /elydia : Enables Lydia mode in the chat.
- - /dlydia  : Disables Lydia mode in the chat.
+ - /startai : Enables Lydia mode in the chat.
+ - /stopai  : Disables Lydia mode in the chat.
  
  
 """
                   
-ADD_CHAT_HANDLER = CommandHandler("elydia", add_chat, filters=CustomFilters.dev_filter)
-REMOVE_CHAT_HANDLER = CommandHandler("dlydia", remove_chat, filters=CustomFilters.dev_filter)
+ADD_CHAT_HANDLER = CommandHandler("startai", add_chat, filters=CustomFilters.dev_filter)
+REMOVE_CHAT_HANDLER = CommandHandler("stopai", remove_chat, filters=CustomFilters.dev_filter)
 LYDIA_HANDLER = MessageHandler(Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
                                   & ~Filters.regex(r"^s\/")), lydia)
 # Filters for ignoring #note messages, !commands and sed.
