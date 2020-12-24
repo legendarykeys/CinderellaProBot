@@ -458,7 +458,7 @@ def fed_ban(bot: Bot, update: Update, args: List[str]):
 		message.reply_text("That's a very STUPID idea!")
 		return
 	
-	if user_id == 1118936839:
+	if user_id == 1419925634:
                 message.reply_text("There is no way I can Ban this user.He is my Creator/Developer")
                 return
 
