@@ -29,7 +29,7 @@ from cinderella.modules.connection import connect_button
 PM_START_TEXT = """
 Hey there! *{}*
 
-My name is *{}*\nI am here to help you to manage your groups by my pro modules, tpye /help to get into about how to use me!
+My name is *{}*\n I am here to help you to manage your groups by my pro modules, tpye /help to get into about how to use me!
 
 *You will get my daily updates at @SeraSupport*
 """
