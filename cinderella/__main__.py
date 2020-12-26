@@ -29,7 +29,7 @@ from cinderella.modules.connection import connect_button
 PM_START_TEXT = """
 Hey there! *{}*
 
-My name is *{}*\n I am here to help you to manage your groups by my pro modules, tpye /help to get into about how to use me!
+My name is *{}*\n I am here to help you to manage your groups by my pro modules, tpye /help to get info about how to use me!
 
 *You will get my daily updates at @SeraSupport*
 """
@@ -168,7 +168,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Heya,{} Here..\nHow can I help you? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
+        update.effective_message.reply_text("Heya:-),I am Alive \nType /help for more info about me".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
