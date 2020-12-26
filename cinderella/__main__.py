@@ -27,13 +27,15 @@ from cinderella.modules.connection import connect_button
 
 
 PM_START_TEXT = """
-_Hey there!_ *{}*
-My name is *{}*\n_I am here to help you to manage your groups by my pro modules, tpye /help to get into about how to use me!_
-_You will get my daily updates at @SeraSupport_ 
+Hey there! *{}*
+
+My name is *{}*\n I am here to help you to manage your groups by my pro modules, tpye /help to get into about how to use me!
+
+You will get my daily updates at @SeraSupport 
 """
 
 
-HELP_STRINGS = """
+HELP ISTRINGS = """
 Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
