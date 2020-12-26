@@ -34,7 +34,7 @@ My name is *{}*\n I am here to help you to manage your groups by my pro modules,
 *You will get my daily updates at @SeraSupport*
 """
 
-HELP_ISTRINGS = """
+HELP_STRINGS = """
 Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
