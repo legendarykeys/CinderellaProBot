@@ -97,8 +97,8 @@ Commands
  
 """
                   
-ADD_CHAT_HANDLER = CommandHandler("startai", add_chat, filters=CustomFilters.dev_filter)
-REMOVE_CHAT_HANDLER = CommandHandler("stopai", remove_chat, filters=CustomFilters.dev_filter)
+ADD_CHAT_HANDLER = CommandHandler("startai", add_chat)
+REMOVE_CHAT_HANDLER = CommandHandler("stopai", remove_chat)
 LYDIA_HANDLER = MessageHandler(Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
                                   & ~Filters.regex(r"^s\/")), lydia)
 # Filters for ignoring #note messages, !commands and sed.
