@@ -1,1 +1,1 @@
-# A Fork Of Cinderella Bot (http://www.telegram.dog/CinderellaProBot)
+# A Fork Of Cinderella Bot
