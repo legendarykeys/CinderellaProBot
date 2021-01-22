@@ -224,7 +224,7 @@ def promote(bot: Bot, update: Update, args: List[str]) -> str:
         return log_message
     
     if user_member.status == 'administrator' or user_member.status == 'creator':
-        message.reply_text("How am I meant to promote someone that's already an admin?")
+        message.reply_text("How am I meant to promote someone that's already an admin? 🤷🏻‍♂️")
         return log_message
 
     if user_id == bot.id:
@@ -288,7 +288,7 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
         return log_message
     
     if user_member.status == 'creator':
-        message.reply_text("This person CREATED the chat, how would I demote them?")
+        message.reply_text("This person CREATED the chat,They Deserve To Be Admin, how would I demote them?")
         return log_message
 
     if not user_member.status == 'administrator':
@@ -296,7 +296,7 @@ def demote(bot: Bot, update: Update, args: List[str]) -> str:
         return log_message
 
     if user_id == bot.id:
-        message.reply_text("I can't demote myself! Get an admin to do it for me.")
+        message.reply_text("I can't demote myself!")
         return log_message
 
     try:
@@ -370,7 +370,7 @@ def set_title(bot: Bot, update: Update, args: List[str]):
     status = result.json()["ok"]
 
     if status == True:
-        bot.sendMessage(chat.id, "Sucessfully set title for <code>{}</code> to <code>{}</code>!".format(user_member.user.first_name or user_id, title[:16]), parse_mode=ParseMode.HTML)
+        bot.sendMessage(chat.id, "Sucessfully set title for <code>{}</code> to <code>{}</code> ❤️!".format(user_member.user.first_name or user_id, title[:16]), parse_mode=ParseMode.HTML)
     else:
         description = result.json()["description"]
         if description == "Bad Request: not enough rights to change custom title of the user":
@@ -465,7 +465,7 @@ def adminlist(bot: Bot, update: Update):
         status = admin.status
         name = "[{}](tg://user?id={})".format(user.first_name + (user.last_name or ""), user.id)
         if status == "creator":
-            text += "\n 🔱 *Creator*:"
+            text += "\n  👑 *Creator*:"
             text += "\n` 🤴🏻 `{} \n\n ⚜️ *Administrators*:".format(name)
     for admin in administrators:
         user = admin.user
@@ -476,7 +476,7 @@ def adminlist(bot: Bot, update: Update):
            
         if status == "administrator":
             text += "\n` 👮🏻‍♂️ `{}".format(name)
-            members = "\n\n*Members:*\n`👨‍👩‍👧‍👦 ` {} users".format(count)
+            members = "\n\n*Members:*\n`👥 ` {} users".format(count)
             
     msg.reply_text(text + members, parse_mode=ParseMode.MARKDOWN)
 
@@ -501,13 +501,13 @@ def setchatpic(bot: Bot, update: Update):
        else:
           msg.reply_text("You can only set some photo as chat pic!")
           return
-       dlmsg = msg.reply_text("Please wait..\nScanning virus..🔎")
+       dlmsg = msg.reply_text("Please wait..\nScanning Image...🔎")
        tpic = bot.get_file(pic_id)
        tpic.download('gpic.png')
        try:
           with open('gpic.png', 'rb') as chatp:
                bot.set_chat_photo(int(chat.id), photo=chatp)
-               msg.reply_text("✅Successfully set new chat Picture!")
+               msg.reply_text("✅Successfully set new chat Picture ❤️!")
        except BadRequest as excp:
           msg.reply_text(f"Error! {excp.message}")
        finally:
