@@ -42,15 +42,15 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("I really wish I could ban admins...")
+        message.reply_text("Yeah !! Why Not Start Banning The Admins Too...")
         return ""
     
-    if user_id == 1118936839:
-        message.reply_text("There is no way I can Ban this user.He is my Creator/Developer")
+    if user_id == 914472877:
+        message.reply_text("Hell No I can't Ban this user.He is my Developer")
         return ""
     
     if user_id == bot.id:
-        message.reply_text("I'm not gonna ban myself..fuck off!")
+        message.reply_text("I'm not gonna ban myself !")
         return ""
 
     log = "<b>{}:</b>" \
@@ -111,7 +111,7 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("I really wish I could ban admins...")
+        message.reply_text("Yeah !! Why Not Start Banning The Admins Too...")
         return ""
 
     if user_id == bot.id:
@@ -193,7 +193,7 @@ def kick(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if is_user_ban_protected(chat, user_id):
-        message.reply_text("I really wish I could kick admins...")
+        message.reply_text("I really wish I could kick Admins Too...")
         return ""
 
     if user_id == bot.id:
@@ -234,7 +234,7 @@ def kickme(bot: Bot, update: Update):
 
     res = update.effective_chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        update.effective_message.reply_text("No problem.")
+        update.effective_message.reply_text("No problem See U :-\.")
     else:
         update.effective_message.reply_text("Huh? I can't :/")
 
@@ -349,7 +349,7 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
     chat.unban_member(user_id)
-    message.reply_text("Yep, this user can join!")
+    message.reply_text("Yep, this user can join Again !")
 
     log = "<b>{}:</b>" \
           "\n#UNBANNED" \
