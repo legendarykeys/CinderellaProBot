@@ -36,7 +36,7 @@ def check_flood(bot: Bot, update: Update) -> str:
     soft_flood = sql.get_flood_strength(chat.id)
     if soft_flood:  # kick
         chat.unban_member(user.id)
-        reply = "Wonderful, I don't like your flooding. Get out! {} has been kicked!".format(mention_html(user.id, user.first_name))
+        reply = "Sad, I don't like your flooding. Get out! {} has been kicked!".format(mention_html(user.id, user.first_name))
 
     else:  # ban
         chat.kick_member(user.id)
@@ -52,7 +52,7 @@ def check_flood(bot: Bot, update: Update) -> str:
                                              mention_html(user.id, user.first_name))
 
     except BadRequest:
-        msg.reply_text("I can't kick people here, give me permissions first! Until then, I'll disable anti-flood.")
+        msg.reply_text("I can't kick people here, give me permissions to restrict people first! Until then, I'll disable anti-flood.")
         sql.set_flood(chat.id, 0)
         return "<b>{}:</b>" \
                "\n#INFO" \
