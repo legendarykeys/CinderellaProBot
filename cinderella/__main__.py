@@ -38,7 +38,6 @@ I'm a modular group management bot with a few fun extras! Have a look at the fol
 the things I can help you with.
 *Main* commands available:
 ✗ - /start: start the bot
-✗ - /donate: information on how to donate!
 ✗ - /help: PM's you this message.
 ✗ - /help <module name>: PM's you info about that module.
 ✗ - /settings:
@@ -55,9 +54,6 @@ VERSION = "6.0"
 def vercheck() -> str:
     return str(VERSION)
 
-
-DONATE_STRING = """Hey, Glad to hear that you wish to Donate!
-But Currently We Dont Accept Donations Thanks ❤️."""
 
 
 IMPORTED = {}
