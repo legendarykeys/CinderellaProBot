@@ -99,7 +99,7 @@ def add_bluetext_ignore(bot: Bot, update: Update, args: List[str]):
         message.reply_text(reply, parse_mode=ParseMode.HTML)
         
     else:
-        reply = "No command supplied to be ignored."
+        reply = "No command to be ignored."
         message.reply_text(reply)
 
 
@@ -120,7 +120,7 @@ def remove_bluetext_ignore(bot: Bot, update: Update, args: List[str]):
         message.reply_text(reply, parse_mode=ParseMode.HTML)
         
     else:
-        reply = "No command supplied to be unignored."
+        reply = "No command to be unignored."
         message.reply_text(reply)
 
 
@@ -140,7 +140,7 @@ def add_bluetext_ignore_global(bot: Bot, update: Update, args: List[str]):
         message.reply_text(reply, parse_mode=ParseMode.HTML)
         
     else:
-        reply = "No command supplied to be ignored."
+        reply = "No command to be ignored."
         message.reply_text(reply)
 
 
@@ -160,7 +160,7 @@ def remove_bluetext_ignore_global(bot: Bot, update: Update, args: List[str]):
         message.reply_text(reply, parse_mode=ParseMode.HTML)
         
     else:
-        reply = "No command supplied to be unignored."
+        reply = "No command to be unignored."
         message.reply_text(reply)
 
 
