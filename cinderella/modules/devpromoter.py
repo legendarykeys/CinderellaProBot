@@ -49,16 +49,16 @@ def addsudo(bot: Bot, update: Update, args: List[str]) -> str:
         data = json.load(infile)
 
     if user_id in SUDO_USERS:
-        message.reply_text("This member is already my SUDO.")
+        message.reply_text("Damn He Is Already My SUDO.❤️")
         return ""
 
     if user_id in SUPPORT_USERS:
-        rt += "This user is already a SUPPORT USER."
+        rt += "This user is already a SUPPORT USER 🤷🏻‍♂️."
         data['supports'].remove(user_id)
         SUPPORT_USERS.remove(user_id)
 
     if user_id in WHITELIST_USERS:
-        rt += "This user is already a WHITELIST USER."
+        rt += "This user is already a WHITELIST USER.😕"
         data['whitelists'].remove(user_id)
         WHITELIST_USERS.remove(user_id)
 
@@ -69,7 +69,7 @@ def addsudo(bot: Bot, update: Update, args: List[str]) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully added this user {} to Sudo!".format(user_member.first_name))
+        rt + "\nSuccessfully added this user {} to Sudo!❤️".format(user_member.first_name))
 
     log_message = (f"#SUDO\n"
                    f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
@@ -102,16 +102,16 @@ def addsupport(bot: Bot, update: Update, args: List[str]) -> str:
         data = json.load(infile)
 
     if user_id in SUDO_USERS:
-        rt += "Demoting status of this SUDO to SUPPORT"
+        rt += "Demoting status of this SUDO to SUPPORT 😔"
         data['sudos'].remove(user_id)
         SUDO_USERS.remove(user_id)
 
     if user_id in SUPPORT_USERS:
-        message.reply_text("This user is already a SUDO.")
+        message.reply_text("This user is already a SUDO 🙃.")
         return ""
 
     if user_id in WHITELIST_USERS:
-        rt += "Promoting Disaster level from WHITELIST USER to SUPPORT USER"
+        rt += "Promoting WHITELIST USER to SUPPORT USER 💥"
         data['whitelists'].remove(user_id)
         WHITELIST_USERS.remove(user_id)
 
@@ -121,7 +121,7 @@ def addsupport(bot: Bot, update: Update, args: List[str]) -> str:
     with open(ELEVATED_USERS_FILE, 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
-    update.effective_message.reply_text(rt + f"\n{user_member.first_name} was added as a Support User!")
+    update.effective_message.reply_text(rt + f"\n{user_member.first_name} was added as a Support User!💥")
 
     log_message = (f"#SUPPORT\n"
                    f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
@@ -206,7 +206,7 @@ def removesudo(bot: Bot, update: Update, args: List[str]) -> str:
         data = json.load(infile)
 
     if user_id in SUDO_USERS:
-        message.reply_text("Demoting to normal user")
+        message.reply_text("Demoting to normal user 😕😒")
         SUDO_USERS.remove(user_id)
         data['sudos'].remove(user_id)
 
@@ -247,7 +247,7 @@ def removesupport(bot: Bot, update: Update, args: List[str]) -> str:
         data = json.load(infile)
 
     if user_id in SUPPORT_USERS:
-        message.reply_text("Demoting to Civilian")
+        message.reply_text("Demoting to Civilian 🤷🏻‍♂️")
         SUPPORT_USERS.remove(user_id)
         data['supports'].remove(user_id)
 
@@ -288,7 +288,7 @@ def removewhitelist(bot: Bot, update: Update, args: List[str]) -> str:
         data = json.load(infile)
 
     if user_id in WHITELIST_USERS:
-        message.reply_text("Demoting to normal user")
+        message.reply_text("Demoting to normal user👨🏻‍🦯")
         WHITELIST_USERS.remove(user_id)
         data['whitelists'].remove(user_id)
 
@@ -311,7 +311,7 @@ def removewhitelist(bot: Bot, update: Update, args: List[str]) -> str:
 @run_async
 @whitelist_plus
 def whitelistlist(bot: Bot, update: Update):
-    reply = "<b>Whitelist user🤍:</b>\n"
+    reply = "<b>Whitelist user 💫:</b>\n"
     for each_user in WHITELIST_USERS:
         user_id = int(each_user)
         try:
@@ -326,7 +326,7 @@ def whitelistlist(bot: Bot, update: Update):
 @run_async
 @whitelist_plus
 def supportlist(bot: Bot, update: Update):
-    reply = "<b>Support List🧡:</b>\n"
+    reply = "<b>Support List⚡:</b>\n"
     for each_user in SUPPORT_USERS:
         user_id = int(each_user)
         try:
@@ -341,7 +341,7 @@ def supportlist(bot: Bot, update: Update):
 @whitelist_plus
 def sudolist(bot: Bot, update: Update):
     true_sudo = list(set(SUDO_USERS) - set(DEV_USERS))
-    reply = "<b>Sudo list❤:</b>\n"
+    reply = "<b>Sudo list ❤:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -356,7 +356,7 @@ def sudolist(bot: Bot, update: Update):
 @whitelist_plus
 def devlist(bot: Bot, update: Update):
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>My developer list🤎:</b>\n"
+    reply = "<b>My developer list 🤴🏻:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
