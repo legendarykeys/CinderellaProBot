@@ -121,8 +121,8 @@ def connect_chat(bot: Bot, update: Update, args: List[str]):
             gethistory = sql.get_history_conn(user.id)
             if gethistory:
                 buttons = [
-                    InlineKeyboardButton(text="❎ Close button", callback_data="connect_close"),
-                    InlineKeyboardButton(text="🧹 Clear history", callback_data="connect_clear")
+                    InlineKeyboardButton(text="❌ Close ❌", callback_data="connect_close"),
+                    InlineKeyboardButton(text="🗑️ Clear history 🗑️", callback_data="connect_clear")
                 ]
             else:
                 buttons = []
@@ -130,7 +130,7 @@ def connect_chat(bot: Bot, update: Update, args: List[str]):
             if conn:
                 connectedchat = dispatcher.bot.getChat(conn)
                 text = "You are connected to *{}* (`{}`)".format(connectedchat.title, conn)
-                buttons.append(InlineKeyboardButton(text="🔌 Disconnect", callback_data="connect_disconnect"))
+                buttons.append(InlineKeyboardButton(text="Disconnect", callback_data="connect_disconnect"))
             else:
                 text = "Write the chat ID or tag to connect!"
             if gethistory:
@@ -277,7 +277,7 @@ def connect_button(bot: Bot, update: Update):
            bot.answer_callback_query(query.id, "You're not connected!", show_alert=True)
     elif clear_match:
         sql.clear_history_conn(query.from_user.id)
-        query.message.edit_text("History connected has been cleared!")
+        query.message.edit_text("History connected has been cleared Successfully!")
     elif connect_close:
         query.message.edit_text("Closed.\nTo open again, type /connect")
     else:
