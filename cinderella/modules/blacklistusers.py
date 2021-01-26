@@ -32,12 +32,12 @@ def bl_user(bot: Bot, update: Update, args: List[str]) -> str:
         message.reply_text("How am I supposed to do my work if I am ignoring myself?")
         return ""
     
-    if user_id == 1118936839:
-        message.reply_text("There is no way I can Blacklist this user.He is my Creator/Developer")
+    if user_id == 914472877:
+        message.reply_text("Hey I Am Not Gonna Blacklist Him.He is my Creator")
         return ""
     
     if user_id in BLACKLISTWHITELIST:
-        message.reply_text("Haye killua kick this guy.")
+        message.reply_text("Hey kick this guy.")
         return ""
 
     try:
@@ -75,7 +75,7 @@ def unbl_user(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
     if user_id == bot.id:
-        message.reply_text("I always notice myself.")
+        message.reply_text("I Wouldn't Ignore myself.")
         return ""
 
     try:
