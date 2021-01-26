@@ -17,13 +17,13 @@ def convert(bot: Bot, update: Update):
         try:
             orig_cur = args[2].upper()
         except IndexError:
-            update.effective_message.reply_text("You forgot to mention the currency code.")
+            update.effective_message.reply_text("You Forgot to Mention the Currency Code.")
             return 
 
         try:
             new_cur = args[3].upper()
         except IndexError:
-            update.effective_message.reply_text("You forgot to mention the currency code to convert into.")
+            update.effective_message.reply_text("You Forgot to Mention the Currency Code to Convert into.")
             return
 
         request_url = f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={orig_cur}&to_currency={new_cur}&apikey={CASH_API_KEY}"
@@ -39,7 +39,7 @@ def convert(bot: Bot, update: Update):
         update.effective_message.reply_text(__help__)
 
 __help__ = """
- - /cash : currency converter
+ - /cash : currency converter 
  example syntax: /cash 1 USD INR
 """
 
