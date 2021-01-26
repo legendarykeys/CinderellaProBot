@@ -5,7 +5,7 @@ from cinderella import ALLOW_EXCL
 import cinderella.modules.sql.blacklistusers_sql as sql
 
 if ALLOW_EXCL:
-    CMD_STARTERS = ('/', '!')
+    CMD_STARTERS = ('/', '!', '?', '$')
 else:
     CMD_STARTERS = ('/')
 
