@@ -46,4 +46,5 @@ hachoir
 validators
 youtube-search-python
 ffmpeg
+telegram
 git+https://github.com/Sur-vivor/python-markdown2.git
