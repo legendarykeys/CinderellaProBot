@@ -69,7 +69,7 @@ ABUSE_STRINGS = (
   
 )
 
-SONG_STRINGS = ("🎶 Death Bed
+SONG_STRINGS = (""" 🎶 Death Bed
 Don't stay awake for too long
 Don't go to bed
 I'll make a cup of coffee for your head
@@ -131,7 +131,7 @@ It'll get you up and going out of bed
 And I, don't stay awake for too long
 Don't go to bed
 I'll make a cup of coffee for your head
-It'll get you up and going out of bed 🎶"
+It'll get you up and going out of bed 🎶 """
  )
 
 @run_async
