@@ -69,9 +69,7 @@ ABUSE_STRINGS = (
   
 )
 
-SONG_STRINGS = (
-    "🎶 Death Bed
-
+SONG_STRINGS = ("🎶 Death Bed
 Don't stay awake for too long
 Don't go to bed
 I'll make a cup of coffee for your head
