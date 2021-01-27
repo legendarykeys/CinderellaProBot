@@ -69,69 +69,21 @@ ABUSE_STRINGS = (
   
 )
 
-SONG_STRINGS = (""" 🎶 Death Bed
-Don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-Yeah...
-I don't wanna fall asleep, I don't wanna pass away
-I been thinking of our future cause I'll never see those days
-I don't know why this has happened, but I probably deserve it
-I tried to do my best, but you know that I'm not perfect
-I been praying for forgiveness, you been praying for my health
-When I leave this earth, hoping you'll find someone else
-Cause yeah, we still young there's so much we haven't done
-Getting married, start a family, watch your husband with his son
-I wish it could be me, but I won't make it off this bed
-I hope I go to heaven, so I see you once again
-My life was kinda short, but I got so many blessings
-Happy you were mine, it sucks that it's all ending
-
-Don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-And I, don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-I'm happy that you're here with me, I'm sorry if I tear up
-When me and you were younger you would always make me cheer up
-Taking goofy videos while walking through the park
-You would jump into my arms every time you heard a bark
-Cuddle in your sheets, sang me sound asleep
-And sneak out through your kitchen at exactly 1:03
-Sundays went to church, on Mondays watched a movie
-Soon you'll be alone, sorry that you have to lose me
-
-Don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-And I, don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-Don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-And I, don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed
-
-And I, don't stay awake for too long
-Don't go to bed
-I'll make a cup of coffee for your head
-It'll get you up and going out of bed 🎶 """
+SONG_STRINGS = ("🎶 I love it when you call me señorita
+I wish I could pretend I didn't need ya
+But every touch is ooh-la-la-la
+It's true, la-la-la"
+"🎶
+First things first
+I'mma say all the words inside my head
+I'm fired up and tired of the way that things have been, oh-ooh
+The way that things have been, oh-ooh
+Second thing second
+Don't you tell me what you think that I can be
+I'm the one at the sail, I'm the master of my sea, oh-ooh
+The master of my sea, oh-ooh"
+"🎶
+"
  )
 
 @run_async
