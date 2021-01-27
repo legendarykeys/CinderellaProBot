@@ -8,7 +8,6 @@ from cinderella.modules.helper_funcs.chat_status import user_admin
 from cinderella.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.utils.helpers import mention_html
-from telegram.error import BadRequest
 
 
 @loggable
