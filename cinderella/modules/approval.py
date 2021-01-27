@@ -1,10 +1,13 @@
 import html
 from cinderella.modules.disable import DisableAbleCommandHandler
-from cinderella import dispatcher, import html
+from cinderella import dispatcher
+import html
 from cinderella.modules.disable import DisableAbleCommandHandler
-from cinderella import dispatcher, import html
+from cinderella import dispatcher
+import html
 from cinderella.modules.disable import DisableAbleCommandHandler
-from cinderella import dispatcher, import html
+from cinderella import dispatcher
+import html
 from cinderella.modules.disable import DisableAbleCommandHandler
 from cinderella import dispatcher, SUDO_USERS 
 from cinderella.modules.helper_funcs.extraction import extract_user
