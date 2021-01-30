@@ -69,26 +69,27 @@ ABUSE_STRINGS = (
   
 )
 
-SONG_STRINGS = ("🎶 I love it when you call me señorita
+SONG_STRINGS = (
+ """🎶 I love it when you call me señorita
 I wish I could pretend I didn't need ya
 But every touch is ooh-la-la-la
-It's true, la-la-la"
-"🎶 First things first
+It's true, la-la-la"""
+"""🎶 First things first
 I'mma say all the words inside my head
 I'm fired up and tired of the way that things have been, oh-ooh
 The way that things have been, oh-ooh
 Second thing second
 Don't you tell me what you think that I can be
 I'm the one at the sail, I'm the master of my sea, oh-ooh
-The master of my sea, oh-ooh"
-"🎶 Here's to the ones that we got
+The master of my sea, oh-ooh"""
+"""🎶 Here's to the ones that we got
 Cheers to the wish you were here, but you're not
 'Cause the drinks bring back all the memories
 Of everything we've been through
 Toast to the ones here today
 Toast to the ones that we lost on the way
 'Cause the drinks bring back all the memories
-And the memories bring back, memories bring back you"
+And the memories bring back, memories bring back you"""
  )
 
 @run_async
