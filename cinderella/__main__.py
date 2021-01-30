@@ -157,7 +157,8 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Hey,\nI Am Alive ^_^".format(bot.first_name)
+        update.effective_message.reply_text("Hey,{} Here..\nI Am Alive ^_^".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
+                                                [[InlineKeyboardButton(text="⚜️Help",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
     #Try to remove old message
@@ -272,9 +273,9 @@ def get_help(bot: Bot, update: Update):
 
         update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="⚜️Help⚜️",url="t.me/{}?start=help".format(bot.username)),
-return
-        
+                                                [[InlineKeyboardButton(text="⚜️Help",url="t.me/{}?start=help".format(bot.username))]))  
+                                               
+        return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
