@@ -174,8 +174,8 @@ def send_start(bot, update):
     text = PM_START_TEXT
 
     keyboard = [[InlineKeyboardButton(text="Help",callback_data="help_back"),InlineKeyboardButton(text="🤴🏻Creator🤴🏻",url="https://t.me/SonOfLars")]]
-    keyboard += [[InlineKeyboardButton(text="InlineKeyboardButton(text="❤️Add Me❤️",url="t.me/{}?startgroup=true".format(bot.username),InlineKeyboardButton(text="⚙️Maintainer⚙️",url="https://t.me/Sawada")]]
-    keyboard += [[InlineKeyboardButton(text="⭐Owner⭐",url="https://t.me/denzid_xd")]]
+    keyboard = [[InlineKeyboardButton(text="InlineKeyboardButton(text="❤️Add Me❤️",url="t.me/{}?startgroup=true".format(bot.username),InlineKeyboardButton(text="⚙️Maintainer⚙️",url="https://t.me/Sawada")]]
+    keyboard = [[InlineKeyboardButton(text="⭐Owner⭐",url="https://t.me/denzid_xd")]]
      
 
     update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
