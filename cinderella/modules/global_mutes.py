@@ -32,14 +32,14 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         message.reply_text("Huh ?? You Trying to Gmute My Owner.😂😂")
         return
 
-    if int(user_id) in SUDO_USERS:
-        message.reply_text("You Can't Gmute Sudo's Son 🤷🏻‍♂️")
-        return
-
     if int(user_id) in DEV_USERS:
         message.reply_text("No Kid I Can't Allow You to Gmute a Dev user, I Owe Him A Lot 🚶🏻‍♂️")
         return
     
+    if int(user_id) in SUDO_USERS:
+        message.reply_text("You Can't Gmute Sudo's Son 🤷🏻‍♂️")
+        return
+
     if int(user_id) in SUPPORT_USERS:
         message.reply_text("Naah You Cannot Gmute a Support User too 🙃")
         return
