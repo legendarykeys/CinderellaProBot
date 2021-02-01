@@ -84,12 +84,12 @@ I'm the one at the sail, I'm the master of my sea, oh-ooh
 The master of my sea, oh-ooh"""
 """🎶 Here's to the ones that we got
 Cheers to the wish you were here, but you're not
-Cause the drinks bring back all the memories
+'Cause the drinks bring back all the memories
 Of everything we've been through
 Toast to the ones here today
 Toast to the ones that we lost on the way
 'Cause the drinks bring back all the memories
-And the memories bring back, memories bring back you""",
+And the memories bring back, memories bring back you"""
  )
 
 @run_async
@@ -112,7 +112,7 @@ def sing(bot: Bot, update: Update):
 
 __help__ = """
 - /abuse : Insult someone in English.
-- /sing : Random Songs Lyrics.
+- /sing : Random Song Lyrics.
 """
 
 __mod_name__ = "EXTRAS"
