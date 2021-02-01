@@ -25,31 +25,28 @@ def gmute(bot: Bot, update: Update, args: List[str]):
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user 🤷🏻‍♂️.")
         return
     
     if int(user_id) == OWNER_ID:
-        message.reply_text("You trying to gmute my Owner..huh??")
+        message.reply_text("Huh ?? You Trying to Gmute My Owner.😂😂")
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("You trying to gmute my sudo..huh??")
+        message.reply_text("You Can't Gmute Sudo's Son 🤷🏻‍♂️")
         return
 
     if int(user_id) in DEV_USERS:
-        message.reply_text("You trying to gmute a Dev user!")
+        message.reply_text("No Kid I Can't Allow You to Gmute a Dev user, I Owe Him A Lot 🚶🏻‍♂️")
         return
     
     if int(user_id) in SUPPORT_USERS:
-        message.reply_text("You trying to gmute a support user!S")
-        return
-    
-    if user_id == 1118936839:
-        message.reply_text("There is no way I can gmute this user.He is my Creator/Developer")
+        message.reply_text("Naah You Cannot Gmute a Support User too 🙃")
         return
 
+
     if user_id == bot.id:
-        message.reply_text("I can't gmute myself.")
+        message.reply_text("I Can't Gmute Myself 🤧.")
         return
 
     try:
@@ -75,7 +72,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
 
         return
 
-    message.reply_text("Gets duct tape ready 😉")
+    message.reply_text("Gets duct tape ready 🤐")
 
     muter = update.effective_user  # type: Optional[User]
     log_message = (
@@ -170,7 +167,7 @@ def ungmute(bot: Bot, update: Update, args: List[str]):
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user.🤷🏻‍♂️")
         return
 
     user_chat = bot.get_chat(user_id)
