@@ -29,7 +29,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         return
     
     if int(user_id) == OWNER_ID:
-        message.reply_text("Huh ?? You Trying to Gmute My Owner.😂😂")
+        message.reply_text("Huh ?? You Trying to Gmute My Owner 😂😂")
         return
 
     if int(user_id) in DEV_USERS:
