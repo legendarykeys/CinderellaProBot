@@ -157,8 +157,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Hey,{} Here..\nI Am Alive ^_^".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="⚜️Help",url="t.me/{}?start=help".format(bot.username))]]))
+        update.effective_message.reply_text("Hey, {} Here..\nI Am Alive ^_^\nPM me :-) if you have any questions on how to use me !".format(bot.first_name))
                                                 
 
 def send_start(bot, update):
