@@ -56,35 +56,32 @@ def gban(bot: Bot, update: Update, args: List[str]):
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user 🤷🏻‍♂️")
         return
     
     if int(user_id) == OWNER_ID:
-        message.reply_text("There is no way I can gban this user.He is my Owner")
+        message.reply_text("Kid, U Aren't Worthy To Ban To Ban My Owner Yet 🤧")
         return
     
-    if user_id == 1118936839:
-        message.reply_text("There is no way I can gban this user.He is my Creator/Developer")
-        return
     
     if int(user_id) in DEV_USERS:
-        message.reply_text("There is no way I can gban this user.")
+        message.reply_text("Hell No I Cant Gban My Dev And Work Against Us🚶🏻‍♂️.")
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
+        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?\n_*Grabs popcorn🍿*")
         return
 
     if int(user_id) in SUPPORT_USERS:
-        message.reply_text("OOOH someone's trying to gban a support user! *grabs popcorn*")
+        message.reply_text("OwO someone's trying to gban a support user! *grabs popcorn*")
         return
     
     if int(user_id) in WHITELIST_USERS:
-        message.reply_text("I can't ban my master's close frd.")
+        message.reply_text("I can't ban This User Yet 🤐.")
         return
 
     if user_id == bot.id:
-        message.reply_text("-_- So funny, lets gban myself why don't I? Nice try.")
+        message.reply_text("-_- So funny, lets gban myself why don't I? Nice try 🤧")
         return
 
     try:
@@ -218,7 +215,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
 
     user_id = extract_user(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user 🤷🏻‍♂️")
         return
 
     user_chat = bot.get_chat(user_id)
