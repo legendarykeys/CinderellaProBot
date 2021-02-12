@@ -141,8 +141,8 @@ def new_member(bot: Bot, update: Update):
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text("Owo,My Master Just Joined The Group!!\nLet The Party Begin 🥳🥳")
                 continue
-            
-             elif new_mem.id == 1191438732:
+            # Special Welcome
+            elif new_mem.id == 1191438732:
                 update.effective_message.reply_text("Yeah!! The Proest Gey Just Joined The Group.")
 
             # Welcome Devs
