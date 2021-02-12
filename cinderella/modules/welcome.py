@@ -139,16 +139,19 @@ def new_member(bot: Bot, update: Update):
         for new_mem in new_members:
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text("Oh🤴Genos,My Owner has just joined your group.")
+                update.effective_message.reply_text("Owo,My Master Just Joined The Group!!\nLet The Party Begin 🥳🥳")
                 continue
             
+             elif new_mem.id == 1191438732:
+                update.effective_message.reply_text("Yeah!! The Proest Gey Just Joined The Group.")
+
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
-                update.effective_message.reply_text("Whoa! A member of the Heroes Association just joined!")
+                update.effective_message.reply_text("Oops! A member of Association just joined!")
                 
             # Welcome Sudos
             elif new_mem.id in SUDO_USERS:
-                update.effective_message.reply_text("Huh! A Sudo User just joined! Stay Alert!")
+                update.effective_message.reply_text("Wew!! A Sudo User just joined The Chat!")
 
             # Welcome Support
             elif new_mem.id in SUPPORT_USERS:
@@ -158,8 +161,7 @@ def new_member(bot: Bot, update: Update):
             elif new_mem.id in WHITELIST_USERS:
                 update.effective_message.reply_text("Oof! A Whitelist User just joined!")
                
-            elif new_mem.id == 1118936839:
-                update.effective_message.reply_text("Oh🤴Genos,My Creator/Developer has just joined your group.")
+          
 
             # Make bot greet admins
             elif new_mem.id == bot.id:
@@ -248,7 +250,7 @@ def left_member(bot: Bot, update: Update):
            
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text("Oi! Genos! My Owner left..")
+                update.effective_message.reply_text("Sad My Master left..😕😔")
                 return
        
             # if media goodbye, use appropriate function for it
