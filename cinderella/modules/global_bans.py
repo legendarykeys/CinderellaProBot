@@ -60,7 +60,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         return
     
     if int(user_id) == OWNER_ID:
-        message.reply_text("Kid, U Aren't Worthy To Ban To Ban My Owner Yet 🤧")
+        message.reply_text("Kid, U Aren't Worthy To Ban To Ban My Master Yet 🤧")
         return
     
     
