@@ -178,7 +178,7 @@ def gkickreset(bot: Bot, update: Update, args: List[str]):
     return
 
 __help__ = """
-*Admin only:*
+*Bot Admins only:*
 - /gkick: To kick a user Globaly
 - /gkickset: Set global kick status of a person
 - /gkickreser: Reset global kick status of a person
