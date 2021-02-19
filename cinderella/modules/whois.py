@@ -1,4 +1,4 @@
-#Modificatins by Sur_vivor
+#Modificatins by Sur_vivor & Me
 import html
 import json
 import os
