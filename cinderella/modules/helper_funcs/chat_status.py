@@ -78,7 +78,7 @@ def dev_plus(func):
         elif DEL_CMDS and " " not in update.effective_message.text:
             update.effective_message.delete()
         else:
-            update.effective_message.reply_text("This is a developer restricted command. You do not have permissions to run this.")
+            update.effective_message.reply_text("This is a developer restricted command. You Can Not run this 😑.")
 
     return is_dev_plus_func
     
@@ -97,7 +97,7 @@ def sudo_plus(func):
         elif DEL_CMDS and " " not in update.effective_message.text:
             update.effective_message.delete()
         else:
-            update.effective_message.reply_text("Who dis non-admin telling me what to do?")
+            update.effective_message.reply_text("Who this non-admin telling me what to do -_- ? ")
 
     return is_sudo_plus_func
 
@@ -146,7 +146,7 @@ def user_admin(func):
         elif DEL_CMDS and " " not in update.effective_message.text:
             update.effective_message.delete()
         else:
-            update.effective_message.reply_text("You don't have access to use this.")
+            update.effective_message.reply_text("You don't have access to use this -_-.")
 
     return is_admin
 
@@ -192,7 +192,7 @@ def bot_admin(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            not_admin = "I'm not admin O_o !! "
+            not_admin = "I'm not admin O_o! "
         else:
             not_admin = f"I'm not admin in <b>{update_chat_title}</b>! "
 
@@ -255,9 +255,9 @@ def can_promote(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_promote = f"I can't promote/demote people here!\nMake sure I'm admin and can appoint new admins:("
+            cant_promote = f"I can't promote/demote people here!\nMake sure I'm admin and can appoint new admins :D "
         else:
-            cant_promote = f"I can't promote/demote people in <b>{update_chat_title}</b>!\nMake sure I'm admin there and can appoint new admins:("
+            cant_promote = f"I can't promote/demote people in <b>{update_chat_title}</b>!\nMake sure I'm admin there and can appoint new admins:D "
         
         if chat.get_member(bot.id).can_promote_members:
             return func(bot, update, *args, **kwargs)
@@ -276,9 +276,9 @@ def can_restrict(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_restrict = f"I can't restrict people here!\nMake sure I'm admin and can restrict users:\"
+            cant_restrict = f"I can't restrict people here!\nMake sure I'm admin and can restrict users -_- "
         else:
-            cant_restrict = f"I can't restrict people in <b>{update_chat_title}</b>!\nMake sure I'm admin there and can restrict users:-\"
+            cant_restrict = f"I can't restrict people in <b>{update_chat_title}</b>!\nMake sure I'm admin there and can restrict users -_- "
 
         if chat.get_member(bot.id).can_restrict_members:
             return func(bot, update, *args, **kwargs)
