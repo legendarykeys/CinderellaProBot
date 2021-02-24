@@ -28,7 +28,7 @@ from cinderella.modules.connection import connect_button
 
 PM_START_TEXT = """
 _Hello_ *{}*
-_My name is_ *{}*\n_I Am A Modular Group Managing Bot To Help You Manage Your  Groups With Fun & Ease\n_Feel Free Add Me In Your Groups❤️\n_Check Out The Below Help Button To Explore Me More_ 
+_I Am_ *{}*\n_I Am A Modular Group Managing Bot To Help You Manage Your Groups With Fun & Ease\n_Feel Free Add Me In Your Groups❤️\n_Check Out The Below Buttons To Explore Me_ 
 """
 
 
@@ -157,7 +157,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Hey, {} Here..\nI Am Alive ^_^\nPM me :-) if you have any questions on how to use me !".format(bot.first_name))
+        update.effective_message.reply_text("I Am Online ^_^\nPM me :) if you have any questions on how to use me !".format(bot.first_name))
                                                 
 
 def send_start(bot, update):
