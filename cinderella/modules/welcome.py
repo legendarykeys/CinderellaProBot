@@ -12,7 +12,6 @@ from telegram.utils.helpers import mention_markdown, mention_html, escape_markdo
 import cinderella.modules.sql.welcome_sql as sql
 import cinderella.modules.sql.global_bans_sql as gbansql
 import cinderella.modules.sql.users_sql as userssql
-import cinderella.modules.sql.feds_sql as feds_sql
 
 from cinderella import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS, MESSAGE_DUMP
 from cinderella.modules.helper_funcs.chat_status import user_admin, can_delete, is_user_ban_protected
@@ -101,15 +100,9 @@ def new_member(bot: Bot, update: Update):
     chatbanned = sql.isBanned(str(chat.id))
     defense = sql.getDefenseStatus(str(chat.id))
     time_value = sql.getKickTime(str(chat.id))
-    fed_id = feds_sql.get_fed_id(chat.id)
-    fed_info = feds_sql.get_fed_info(fed_id)    
-    fban, fbanreason, fbantime = feds_sql.get_fban_user(fed_id, user.id)    
     if chatbanned:
         bot.leave_chat(int(chat.id))
-    elif fban:
-        update.effective_message.reply_text("🔨 User {} is banned in the current Federation ({}), and so has been Removed.\n<b>Reason</b>: {}".format(mention_html(user.id, user.first_name), fed_info['fname'], fbanreason or "No reason given"), parse_mode=ParseMode.HTML)
-        bot.kick_chat_member(chat.id, user.id)        
-     #elif casPrefs and not autoban and cas.banchecker(user.id):
+    #elif casPrefs and not autoban and cas.banchecker(user.id):
        # bot.restrict_chat_member(chat.id, user.id, 
        #                                  can_send_messages=False,
        #                                  can_send_media_messages=False, 
