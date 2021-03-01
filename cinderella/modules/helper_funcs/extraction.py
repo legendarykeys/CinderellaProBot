@@ -75,8 +75,9 @@ def extract_user_and_text(message: Message, args: List[str]) -> (Optional[int], 
         message.bot.get_chat(user_id)
     except BadRequest as excp:
         if excp.message in ("User_id_invalid", "Chat not found"):
-            message.reply_text("I don't seem to have interacted with this user before - please forward a message from
-                               them to me !")
+            message.reply_text("I don't seem to have interacted with this user before - please forward a message from "
+                               "them to give me control! (like a voodoo doll, I need a piece of them to be able "
+                               "to execute certain commands...)")
         else:
             LOGGER.exception("Exception %s on user %s", excp.message, user_id)
 
@@ -117,7 +118,8 @@ def extract_unt_fedban(message: Message, args: List[str]) -> (Optional[int], Opt
         user_id = get_user_id(user)
         if not user_id and not str(user_id).isdigit():
             message.reply_text("I don't seem to have interacted with this user before - please forward a message from "
-                               "them to me !")
+                               "them to give me control! (like a voodoo doll, I need a piece of them to be able "
+                               "to execute certain commands...)")
             return None, None
 
         else:
@@ -143,7 +145,8 @@ def extract_unt_fedban(message: Message, args: List[str]) -> (Optional[int], Opt
     except BadRequest as excp:
         if excp.message in ("User_id_invalid", "Chat not found") and not str(user_id).isdigit():
             message.reply_text("I don't seem to have interacted with this user before - please forward messages from"
-                               "them to me !")
+                               "them to give me control! (Like a voodoo doll, I need a piece to be able to"
+                               "to execute certain commands ...)")
             return None, None
         elif excp.message != "Chat not found":
             LOGGER.exception("Exception %s on user %s", excp.message, user_id)
