@@ -172,7 +172,7 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="Help",callback_data="help_back"),InlineKeyboardButton(text="🤴🏻Creator🤴🏻",url="https://t.me/SonOfLars"),InlineKeyboardButton(text="⚜️Owner⚜️",url="https://t.me/Denzid_xd")]]
+    keyboard = [[InlineKeyboardButton(text="Help",callback_data="help_back"),InlineKeyboardButton(text="🤴🏻Creator🤴🏻",url="https://t.me/SonOfLars"),InlineKeyboardButton(text="⚜️Owner⚜️",url="https://t.me/Denzid_xd"),InlineKeyboardButton(text="🤑 Sponsor 🤑",url="https://t.me/MaskedVirus")]]
     keyboard += [[InlineKeyboardButton(text="⚙️Maintainer⚙️",url="https://t.me/Sawada"),InlineKeyboardButton(text="⚜️Add Me⚜️",url="t.me/{}?startgroup=true".format(bot.username))]]
      
 
