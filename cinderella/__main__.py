@@ -18,7 +18,7 @@ from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, Cha
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown
-from cinderella import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, OWNER_NAME, ALLOW_EXCL
+from cinderella import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, OWNER_NAME, ALLOW_EXCL, client
 from cinderella.modules import ALL_MODULES
 from cinderella.modules.helper_funcs.chat_status import is_user_admin
 from cinderella.modules.helper_funcs.misc import paginate_modules
@@ -27,28 +27,22 @@ from cinderella.modules.connection import connect_button
 
 
 PM_START_TEXT = """
-Hey there! *{}*
-
-My name is *{}*\nI am here to help you to manage your groups by my pro modules, tpye /help to get info about how to use me!
-
-*You will get my daily updates at @SeraSupport*
+_Hello_ *{}*
+_I Am_ *{}*\n_I Am A Modular Group Managing Bot To Help You Manage Your Groups With Fun & Ease\n_Feel Free Add Me In Your Groups❤️\n_Check Out The Below Buttons To Explore Me_ 
 """
+
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
 I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
-
-*Main commands available*:
- 🌀 - /start: start the bot
- 🌀 - /help: PM's you this message.
- 🌀 - /help <module name>: PM's you info about that module.
- 🌀 - /settings:
-
-🔈If U Want Any Support Or Have Any Query Related to Bot u can visit @SeraSupport
-
- 🔹 - in PM: will send you your settings for all supported modules.
- 🔸 - in a group: will redirect you to pm, with all that chat's settings.
+*Main* commands available:
+✗ - /start: start the bot
+✗ - /help: PM's you this message.
+✗ - /help <module name>: PM's you info about that module.
+✗ - /settings:
+   🔰 - in PM: will send you your settings for all supported modules.
+   🔰 - in a group: will redirect you to pm, with all that chat's settings.
 {}
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
@@ -60,11 +54,6 @@ VERSION = "6.0"
 def vercheck() -> str:
     return str(VERSION)
 
-
-SOURCE_STRING = """
-⚡I'm built in python3, using the python-telegram-bot library.
-⚡Sorry But I can't give u permission to clone me 😊
-"""
 
 
 IMPORTED = {}
@@ -82,7 +71,7 @@ GDPR = []
 
 START_IMG = os.environ.get('START_IMG', None)
 if START_IMG is None:
-    img = "https://telegra.ph/file/511ad504656e712b88235.jpg"
+    img = "https://telegra.ph/file/f3b4e367dde4f67c80f40.jpg"
 else:
   img = START_IMG    
     
@@ -168,8 +157,8 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Heya:-), I am Alive! \nType /help to get more info about me!".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username))]]))
+        update.effective_message.reply_text("I Am Online ^_^\nPM me :) if you have any questions on how to use me !".format(bot.first_name))
+                                                
 
 def send_start(bot, update):
     #Try to remove old message
@@ -183,8 +172,9 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="Help",callback_data="help_back")]]
-    keyboard += [[InlineKeyboardButton(text="Add Me To Your Group",url="t.me/{}?startgroup=true".format(bot.username))]]
+    keyboard = [[InlineKeyboardButton(text="Help",callback_data="help_back"),InlineKeyboardButton(text="🤴🏻Creator🤴🏻",url="https://t.me/SonOfLars"),InlineKeyboardButton(text="⚜️Owner⚜️",url="https://t.me/Denzid_xd"),InlineKeyboardButton(text="🤑 Sponsor 🤑",url="https://t.me/MaskedVirus")]]
+    keyboard += [[InlineKeyboardButton(text="⚙️Maintainer⚙️",url="https://t.me/Sawada"),InlineKeyboardButton(text="⚜️Add Me⚜️",url="t.me/{}?startgroup=true".format(bot.username))]]
+     
 
     update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
@@ -236,33 +226,39 @@ def help_button(bot: Bot, update: Update):
             module = mod_match.group(1)
             text = "Here is the help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                    + HELPABLE[module].__help__
-            query.message.reply_text(text=text,
+            query.message.edit_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+                                         [[InlineKeyboardButton(text="🚶🏻‍♂️Back🚶🏻‍♂️", callback_data="help_back")]]))
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.reply_text(HELP_STRINGS,
+            query.message.edit_text(HELP_STRINGS,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
                                          paginate_modules(curr_page - 1, HELPABLE, "help")))
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.reply_text(HELP_STRINGS,
+            query.message.edit_text(HELP_STRINGS,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
                                          paginate_modules(next_page + 1, HELPABLE, "help")))
 
         elif back_match:
+         try:
+            query.message.edit_text(text=HELP_STRINGS,
+                                    parse_mode=ParseMode.MARKDOWN,
+                                    reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help")))
+         except:
             query.message.reply_text(text=HELP_STRINGS,
-                                     parse_mode=ParseMode.MARKDOWN,
-                                     reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help")))
+                                    parse_mode=ParseMode.MARKDOWN,
+                                    reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help")))
+            bot.answer_callback_query(query.id)
+            query.message.delete()
 
         # ensure no spinny white circle
-        bot.answer_callback_query(query.id)
-        query.message.delete()
+        
     except BadRequest as excp:
         if excp.message == "Message is not modified":
             pass
@@ -282,18 +278,16 @@ def get_help(bot: Bot, update: Update):
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
 
-        update.effective_message.reply_text("Contact me in PM to get Instant help.",
+        update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username))],
-                                                [InlineKeyboardButton(text="🛡Contact Creator",url="https://t.me/Mr_Y00")]]))
-
+                                                [[InlineKeyboardButton(text="⚜️Help⚜️",url="t.me/{}?start=help".format(bot.username))]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
-        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="🚶‍♂️Back🚶‍♂️", callback_data="help_back")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
@@ -348,7 +342,7 @@ def settings_button(bot: Bot, update: Update):
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton(text="Back",
+                                         [[InlineKeyboardButton(text="🚶🏻‍♂️Back🚶🏻‍♂️",
                                                                 callback_data="stngs_back({})".format(chat_id))]]))
 
         elif prev_match:
@@ -450,9 +444,9 @@ def source(bot: Bot, update: Update):
         try:
             bot.send_message(user.id, SOURCE_STRING, parse_mode=ParseMode.MARKDOWN)
 
-            update.effective_message.reply_text("🤨🤨Bsdk Source Code Chahiye, Ib kar Batati hu Tereko.")
+            update.effective_message.reply_text("You'll find in PM more info about my sourcecode.")
         except Unauthorized:
-            update.effective_message.reply_text("🤨🤨Bsdk Source Code Chahiye, Ib kar Batati hu Tereko.")
+            update.effective_message.reply_text("Contact me in PM first to get source information.")
 
 @run_async
 def imdb_searchdata(bot: Bot, update: Update):
@@ -608,10 +602,12 @@ def main():
     else:
         LOGGER.info("Cinderella running...")
         updater.start_polling(timeout=15, read_latency=4)
+        client.run_until_disconnected()
 
     updater.idle()
 
     
 if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    client.start(bot_token=TOKEN)
     main()
