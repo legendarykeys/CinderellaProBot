@@ -28,13 +28,13 @@ from cinderella.modules.connection import connect_button
 
 PM_START_TEXT = """
 _Hello_ *{}*
-_I Am_ *{}*\n_I Am A Modular Group Managing Robot To Help You Manage Your Groups With Fun & Ease\n_Feel Free Add Me In Your Groups❤️\n_Check Out The Below Buttons To Explore Me_ 
+_I Am_Buddy gand\n_I Am A Modular Gandu Robot To Help You Manage Your Groups With Fun & Ease\n_Feel Free Add Me In Your Groups❤️\n_Check Out The Below Buttons To Explore Me_ 
 """
 
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
+I'm a modular gand management bot with a few fun extras! Have a look at the following for an idea of some of \
 the things I can help you with.
 *Main* commands available:
 ✗ - /start: start the bot
